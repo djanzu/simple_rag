@@ -70,21 +70,6 @@ python manage.py embed <ファイルパス>
 python manage.py embed sample_info.md
 ```
 
-### 外部ツール
-
-本システムに関連する、カスタムで利用可能な外部コマンドです。
-
-#### anzu-nikki-mcp
-日記データを取得するためのMCPサーバーです。
-
-#### new_getbsk
-Bluesky（bsk）から特定のアカウントの発言を取得します。
-
-```bash
-new_getbsk アカウント名 --plain
-```
-※実行すると `アカウント名.txt` ファイル内に発言が格納されます。
-
 ## 補足事項
 
 - **ベクトルデータの保存**: `chroma_db/` ディレクトリに永続化されます。
