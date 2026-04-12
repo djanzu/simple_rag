@@ -31,7 +31,7 @@ class Command(BaseCommand):
         documents = loader.load()
 
         # Split into chunks
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=300)
         chunks = text_splitter.split_documents(documents)
 
         self.stdout.write(f'Split into {len(chunks)} chunks.')

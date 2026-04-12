@@ -43,7 +43,7 @@ def chat_api(request):
             
             prompt = ChatPromptTemplate.from_template("""You are a helpful assistant. Use the following context to answer the question.
 If the answer is not in the context, just say you don't know. Don't try to make up an answer.
-
+When generating responses, ensure that you check for any "provisos," "annotations," or "exception clauses" within the provided text. Especially when numerical calculations are required, please output the results after applying all conditional branches.
 Context:
 {context}
 
