@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create a typing indicator element
     const typingIndicator = document.createElement('div');
     typingIndicator.className = 'typing-indicator';
-    typingIndicator.innerText = 'Gemma is thinking...';
+    typingIndicator.innerText = 'Yaccho is thinking...';
     chatWindow.appendChild(typingIndicator);
 
     function appendMessage(text, type, sources = []) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            
+
             // Hide typing indicator
             typingIndicator.style.display = 'none';
 
