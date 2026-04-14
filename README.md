@@ -74,6 +74,7 @@ python manage.py embed sample_rule.md
 
 - **ベクトルデータの保存**: `chroma_db/` ディレクトリに永続化されます。
 - **インデックスのリセット**: 登録したデータを消去したい場合は `chroma_db/` ディレクトリを削除してください。
+  - ``python manage.py reset_chroma``でも消去できます。
 
 ## memo
 但し書きが読まれていないため、精度向上のために追加したプロンプト

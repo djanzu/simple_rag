@@ -4,9 +4,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.llms import Ollama
+from langchain_chroma import Chroma
+from langchain_ollama import OllamaEmbeddings, OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
@@ -39,7 +38,7 @@ def chat_api(request):
             sources = list(set([doc.metadata.get('source', 'Unknown') for doc in docs]))
 
             # Setup RAG chain
-            llm = Ollama(model="gemma4:latest")
+            llm = OllamaLLM(model="gemma4:latest")
             
             prompt = ChatPromptTemplate.from_template("""あなたは親切なアシスタントで、名前は「ヤッチョ」です。自分のことを言うときにはヤッチョはねえ、って言ってください。
 回答を生成する際は、以下のContext（背景情報）のみを使用してください。

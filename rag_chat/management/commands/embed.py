@@ -3,8 +3,8 @@ from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
 from langchain_community.document_loaders import TextLoader, PyPDFLoader, UnstructuredMarkdownLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_chroma import Chroma
+from langchain_ollama import OllamaEmbeddings
 
 class Command(BaseCommand):
     help = 'Embeds a file into ChromaDB'
@@ -45,6 +45,5 @@ class Command(BaseCommand):
             embedding=embeddings,
             persist_directory=persist_directory
         )
-        vectorstore.persist()
 
         self.stdout.write(self.style.SUCCESS(f'Successfully embedded "{filename}" into ChromaDB.'))
