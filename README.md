@@ -67,7 +67,7 @@ python manage.py embed <ファイルパス>
 
 例:
 ```bash
-python manage.py embed sample_info.md
+python manage.py embed sample_rule.md
 ```
 
 ## 補足事項
